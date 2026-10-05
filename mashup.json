@@ -218,13 +218,11 @@
   "status": "beta",
   "issues": "https://github.com/rehan-remade/universal-modder/issues",
   "notes": [
-    "You need GTA V Legacy (Steam, GTA5.exe, build 3889; not the Enhanced edition) and Minecraft: Java Edition. Windows only.",
-    "Install ScriptHookV yourself first (it may not be redistributed): download it for your GTA build from dev-c.com and copy ScriptHookV.dll and dinput8.dll from its bin folder into the GTA V folder.",
-    "The app adds MCPassthrough.asi, ReShade 6.8.0 (as ReShade64.asi, with ReShade.ini and the MCPassthrough effect) and args.txt (-nobattleye -noBE) to the GTA V folder; Restore removes them and puts back any file they replaced.",
-    "Press Play: Minecraft starts first (the app's Prism instance \"sigf-um-gta5-passthrough\", Minecraft 26.3, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3, Java 25); leave its window open. Then GTA V starts with BattlEye off: pick Story Mode on the landing page yourself.",
-    "Story mode only, never GTA Online: BattlEye stays off while the files are installed. Back up your saves first.",
-    "GTA settings that work: windowed 1920x1080, \"Pause game on focus loss\" off, depth of field off. F7 toggles the passthrough, F8 re-levels the Minecraft ground. Third person can stutter; first person plays best (issue #60).",
-    "The link listens on 127.0.0.1:25599 with no authentication while Minecraft runs (upstream design).",
-    "SIGF build of universal-modder 0f5dcdf (no upstream release). Beta: report bugs to the author on the upstream issue tracker."
+    "How it works: real Minecraft 26.3 runs next to GTA V Legacy story mode and is drawn into it. GTA's movement and camera drive Steve, blocks you place become GTA props, and TNT and creepers blow up in both games.",
+    "Press Play: Minecraft starts first. Load a single-player world in Minecraft first (the mod opens its own void creative world \"passthrough\" by itself) and leave its window open. GTA V then starts with BattlEye off: pick Story Mode yourself. GTA shows \"Minecraft passthrough connected\" when linked.",
+    "Keys: F7 turns the passthrough off and on. F8 re-levels the Minecraft ground. Left/right mouse are Minecraft's attack/use, mouse wheel or 1-9 the hotbar, Tab an experimental gun mode, Space takes off with the elytra. Walking, driving and the camera stay GTA's.",
+    "You need GTA V Legacy on Steam (GTA5.exe, build 3889; not the Enhanced edition) and Minecraft: Java Edition, on Windows. Install ScriptHookV for your GTA build yourself: copy ScriptHookV.dll and dinput8.dll from its bin folder into the GTA V folder.",
+    "Needs a GTA V Story Mode save past the prologue: press F7 to turn the mod off, play the opening mission, then press F7 again in Los Santos. Story mode only, never GTA Online: BattlEye stays off while installed. Back up your saves first.",
+    "Plays best windowed 1920x1080 with \"Pause game on focus loss\" and depth of field off; first person is smoother than third person. The local link has no password while Minecraft runs. Beta: report bugs to the author with the Report a bug link."
   ]
 }
