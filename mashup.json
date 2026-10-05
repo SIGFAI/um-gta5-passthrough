@@ -4,11 +4,11 @@
   "name": "Minecraft x GTA V Passthrough",
   "tagline": "Real Minecraft 26.3 drawn into GTA V story mode: build with blocks that become GTA props, TNT and creepers blow up both worlds, elytra over Los Santos.",
   "how_to_play": [
-    "Play Steve inside GTA V story mode: blocks you place become GTA props, and TNT and creepers blow up in both games.",
-    "Left and right mouse are Minecraft's attack and use, wheel or 1-9 the hotbar, Space takes off with the elytra.",
-    "F7 turns the passthrough off and on, F8 re-levels the Minecraft ground; walking, driving and the camera stay GTA's.",
-    "Press Play: Minecraft opens its passthrough world by itself; leave it open, then pick Story Mode in GTA V.",
-    "Wait for Minecraft passthrough connected; in a new game press F7 to play the prologue, then F7 again in Los Santos."
+    "Real Minecraft 26.3 inside GTA V Legacy story mode: GTA drives Steve, blocks you place become GTA props, and TNT and creepers blow up in both games.",
+    "Press Play: Minecraft starts first and opens its own void creative world \"passthrough\"; leave its window open. Then GTA V starts: pick Story Mode.",
+    "GTA shows \"Minecraft passthrough connected\" when linked. F7 turns the passthrough off and on, F8 re-levels the Minecraft ground.",
+    "Left/right mouse are Minecraft's attack/use, wheel or 1-9 the hotbar, Tab an experimental gun mode, Space takes off with the elytra.",
+    "Walking, driving and the camera stay GTA's."
   ],
   "kind": "passthrough",
   "games": [
@@ -225,9 +225,6 @@
   "status": "beta",
   "issues": "https://github.com/rehan-remade/universal-modder/issues",
   "notes": [
-    "How it works: real Minecraft 26.3 runs next to GTA V Legacy story mode and is drawn into it. GTA's movement and camera drive Steve, blocks you place become GTA props, and TNT and creepers blow up in both games.",
-    "Press Play: Minecraft starts first. Load a single-player world in Minecraft first (the mod opens its own void creative world \"passthrough\" by itself) and leave its window open. GTA V then starts with BattlEye off: pick Story Mode yourself. GTA shows \"Minecraft passthrough connected\" when linked.",
-    "Keys: F7 turns the passthrough off and on. F8 re-levels the Minecraft ground. Left/right mouse are Minecraft's attack/use, mouse wheel or 1-9 the hotbar, Tab an experimental gun mode, Space takes off with the elytra. Walking, driving and the camera stay GTA's.",
     "You need GTA V Legacy on Steam (GTA5.exe, build 3889; not the Enhanced edition) and Minecraft: Java Edition, on Windows. Install ScriptHookV for your GTA build yourself: copy ScriptHookV.dll and dinput8.dll from its bin folder into the GTA V folder.",
     "Needs a GTA V Story Mode save past the prologue: press F7 to turn the mod off, play the opening mission, then press F7 again in Los Santos. Story mode only, never GTA Online: BattlEye stays off while installed. Back up your saves first.",
     "Plays best windowed 1920x1080 with \"Pause game on focus loss\" and depth of field off; first person is smoother than third person. The local link has no password while Minecraft runs. Beta: report bugs to the author with the Report a bug link."
