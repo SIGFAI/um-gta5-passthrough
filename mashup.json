@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "name": "Minecraft x GTA V Passthrough",
   "tagline": "Real Minecraft 26.3 drawn into GTA V story mode: build with blocks that become GTA props, TNT and creepers blow up both worlds, elytra over Los Santos.",
+  "how_to_play": [
+    "Play Steve inside GTA V story mode: blocks you place become GTA props, and TNT and creepers blow up in both games.",
+    "Left and right mouse are Minecraft's attack and use, wheel or 1-9 the hotbar, Space takes off with the elytra.",
+    "F7 turns the passthrough off and on, F8 re-levels the Minecraft ground; walking, driving and the camera stay GTA's.",
+    "Press Play: Minecraft opens its passthrough world by itself; leave it open, then pick Story Mode in GTA V.",
+    "Wait for Minecraft passthrough connected; in a new game press F7 to play the prologue, then F7 again in Los Santos."
+  ],
   "kind": "passthrough",
   "games": [
     {
