@@ -1,0 +1,230 @@
+{
+  "id": "sigf/um-gta5-passthrough",
+  "version": "0.1.0",
+  "name": "Minecraft x GTA V Passthrough",
+  "tagline": "Real Minecraft 26.3 drawn into GTA V story mode: build with blocks that become GTA props, TNT and creepers blow up both worlds, elytra over Los Santos.",
+  "kind": "passthrough",
+  "games": [
+    {
+      "game": "gta5",
+      "role": "host",
+      "label": "GTA V Legacy",
+      "engine": "GTA V Legacy (RAGE, story mode) + ScriptHookV ASI MCPassthrough (C++) + ReShade add-on",
+      "apps": {
+        "steam": "271590"
+      },
+      "builds": {
+        "steam": [
+          "1.0.3889.0"
+        ]
+      },
+      "runtime": "GTA V Legacy build 3889 (GTA5.exe); Enhanced is not supported"
+    },
+    {
+      "game": "minecraft",
+      "role": "guest",
+      "label": "Minecraft",
+      "engine": "Minecraft Java 26.3 + Fabric mod passthrough (Java)",
+      "mc": "26.3",
+      "loader": "fabric@0.19.5",
+      "java": "25"
+    }
+  ],
+  "requires": [
+    {
+      "id": "scripthookv",
+      "page": "https://www.dev-c.com/gtav/scripthookv/",
+      "license": "Alexander Blade: free, not redistributable",
+      "note": "ScriptHookV for your GTA V Legacy build (3889.0 for build 3889): copy ScriptHookV.dll and dinput8.dll from its bin folder into the GTA V folder"
+    },
+    {
+      "id": "reshade",
+      "version": "6.8.0 (add-on)",
+      "license": "BSD-3-Clause, shipped unchanged",
+      "page": "https://reshade.me/",
+      "note": "installed into the GTA V folder by the app as ReShade64.asi",
+      "source": {
+        "url": "https://github.com/SIGFAI/um-gta5-passthrough/releases/download/v0.1.0/reshade-6.8.0-addon.zip",
+        "sha256": "d4167356162b209be93b6a35cf7e1253cffb2ac00746cf007a7201d362b00d07"
+      }
+    },
+    {
+      "id": "fabric-loader",
+      "version": "0.19.5"
+    },
+    {
+      "id": "fabric-api",
+      "version": "0.161.0+26.3",
+      "note": "in the Minecraft pack (downloaded from Modrinth)"
+    }
+  ],
+  "install": [
+    {
+      "game": "gta5",
+      "strategy": "game-dir-snapshot",
+      "loader": "scripthookv",
+      "files": [
+        {
+          "src": "reshade-6.8.0-addon.zip",
+          "dst": "{game}",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "reshade-shaders/LICENSE-ReShade.md",
+              "sha256": "237ded5b8344f820113efab1e65e91e1f159d9202c5b4856606a0590d3ffdab0"
+            },
+            {
+              "path": "reshade-shaders/Shaders/ReShade.fxh",
+              "sha256": "6dabfbbaf968c3871905d2ea17f96572ff7b1cec01310b5d0e5252b66b30174f"
+            },
+            {
+              "path": "reshade-shaders/Shaders/ReShadeUI.fxh",
+              "sha256": "78adf672df47460297eb9fe6dd238d2aafa24510b52b84feb1a745dff70eb901"
+            },
+            {
+              "path": "ReShade64.asi",
+              "sha256": "0cee63f9c9f13f3ac909c5b4903f4dbb4b719a7ab3b4f13b0deaf83c814b94f7"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/um-gta5-passthrough/releases/download/v0.1.0/reshade-6.8.0-addon.zip",
+          "sha256": "d4167356162b209be93b6a35cf7e1253cffb2ac00746cf007a7201d362b00d07",
+          "size": 2460727
+        },
+        {
+          "src": "um-gta5-passthrough-gta5.zip",
+          "dst": "{game}",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "args.txt",
+              "sha256": "0e08ca288106ada67ac9fee4cf146cd7f7dad40c9cc2c29390541a4993b19332"
+            },
+            {
+              "path": "LICENSE-passthrough.txt",
+              "sha256": "db6cfa2ad2c44f73080440c866c4a3a078749d84ba40b4dfa27d50f18a525543"
+            },
+            {
+              "path": "MCPassthrough.asi",
+              "sha256": "f5c83c3bb7c3ac94e06d1b29b7a642a440f20015627920aa716989ef98e32f3a"
+            },
+            {
+              "path": "reshade-shaders/Shaders/MCPassthrough.fx",
+              "sha256": "472e95f7a4d2a164310b4b0ddd034629cd4744da7cf89074be017b36bbb959fd"
+            },
+            {
+              "path": "ReShade.ini",
+              "sha256": "53f1f2a06a4162b151505c432dbcda90b15d361896a41aab9b7fd06753e0394e"
+            },
+            {
+              "path": "ReShadePreset.ini",
+              "sha256": "5eef6bfad216f3d0e92df08ac4137944d8db8fac4228ee955bf66518cb3f85c1"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/um-gta5-passthrough/releases/download/v0.1.0/um-gta5-passthrough-gta5.zip",
+          "sha256": "67d3f69e0e540d25cc6169891104e52ff00058e2eaf7fc62daf745cc608c5673",
+          "size": 186111
+        }
+      ]
+    },
+    {
+      "game": "minecraft",
+      "strategy": "mrpack",
+      "pack": {
+        "src": "um-gta5-passthrough.mrpack",
+        "url": "https://github.com/SIGFAI/um-gta5-passthrough/releases/download/v0.1.0/um-gta5-passthrough.mrpack",
+        "sha256": "3c88e9c240c1f0c667b17cdbd8932895c0043e0b96a8cb6a2033c672c088cc30",
+        "size": 203944
+      }
+    }
+  ],
+  "launch": [
+    {
+      "game": "minecraft",
+      "wait": "port:25599"
+    },
+    {
+      "game": "gta5",
+      "args": []
+    }
+  ],
+  "files": [
+    {
+      "name": "reshade-6.8.0-addon.zip",
+      "url": "https://github.com/SIGFAI/um-gta5-passthrough/releases/download/v0.1.0/reshade-6.8.0-addon.zip",
+      "sha256": "d4167356162b209be93b6a35cf7e1253cffb2ac00746cf007a7201d362b00d07",
+      "size": 2460727
+    },
+    {
+      "name": "um-gta5-passthrough-gta5.zip",
+      "url": "https://github.com/SIGFAI/um-gta5-passthrough/releases/download/v0.1.0/um-gta5-passthrough-gta5.zip",
+      "sha256": "67d3f69e0e540d25cc6169891104e52ff00058e2eaf7fc62daf745cc608c5673",
+      "size": 186111
+    },
+    {
+      "name": "um-gta5-passthrough.mrpack",
+      "url": "https://github.com/SIGFAI/um-gta5-passthrough/releases/download/v0.1.0/um-gta5-passthrough.mrpack",
+      "sha256": "3c88e9c240c1f0c667b17cdbd8932895c0043e0b96a8cb6a2033c672c088cc30",
+      "size": 203944
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/rehan-remade/universal-modder",
+    "path": "examples/minecraft-gta5-passthrough",
+    "license": "MIT AND BSD-3-Clause",
+    "upstream_license": "MIT",
+    "commit": "0f5dcdfdcd8ed420f8413815bd6647586ab894a2",
+    "hosted": "https://github.com/SIGFAI/um-gta5-passthrough",
+    "built": {
+      "by": "SIGF",
+      "commit": "0f5dcdfdcd8ed420f8413815bd6647586ab894a2",
+      "builder": "AWS EC2 i-0022be8314df37721 (c6i.4xlarge, Windows Server 2022, terminated after the build)",
+      "artifacts": {
+        "LICENSE": "db6cfa2ad2c44f73080440c866c4a3a078749d84ba40b4dfa27d50f18a525543",
+        "MCPassthrough.asi": "f5c83c3bb7c3ac94e06d1b29b7a642a440f20015627920aa716989ef98e32f3a",
+        "MCPassthrough.fx": "472e95f7a4d2a164310b4b0ddd034629cd4744da7cf89074be017b36bbb959fd",
+        "passthrough-0.1.0.jar": "4000178514beeb11f7116c0baf92ac1c596c93b38fcee1e75a63761b6a9195cb",
+        "reshade/ReShade.fxh": "6dabfbbaf968c3871905d2ea17f96572ff7b1cec01310b5d0e5252b66b30174f",
+        "reshade/ReShade64.dll": "0cee63f9c9f13f3ac909c5b4903f4dbb4b719a7ab3b4f13b0deaf83c814b94f7",
+        "reshade/ReShade-LICENSE.md": "237ded5b8344f820113efab1e65e91e1f159d9202c5b4856606a0590d3ffdab0",
+        "reshade/ReShadeUI.fxh": "78adf672df47460297eb9fe6dd238d2aafa24510b52b84feb1a745dff70eb901"
+      }
+    },
+    "bundled": [
+      {
+        "name": "ReShade",
+        "version": "6.8.0",
+        "repo": "https://github.com/crosire/reshade",
+        "commit": "18deaa52de0c425a78b329e9cb3c497281cd00ec",
+        "license": "BSD-3-Clause",
+        "file": "ReShade64.dll from ReShade_Setup_6.8.0_Addon.exe (sha256 afe4c8f13048306307983b8b3d41d5bf00a86820440b0e57dea10950e1176445)",
+        "shaders": {
+          "repo": "https://github.com/crosire/reshade-shaders",
+          "commit": "fd0022170615ce0d8162d219bff07232fa6dd84f",
+          "license": "CC0-1.0"
+        }
+      }
+    ]
+  },
+  "media": {},
+  "built_by": {
+    "author": "rehan-remade",
+    "authors": [
+      "rehan-remade"
+    ],
+    "packaged_by": "SIGF"
+  },
+  "idea_by": "rehan-remade",
+  "built_at": "2026-10-05T00:00:00.000Z",
+  "status": "beta",
+  "issues": "https://github.com/rehan-remade/universal-modder/issues",
+  "notes": [
+    "You need GTA V Legacy (Steam, GTA5.exe, build 3889; not the Enhanced edition) and Minecraft: Java Edition. Windows only.",
+    "Install ScriptHookV yourself first (it may not be redistributed): download it for your GTA build from dev-c.com and copy ScriptHookV.dll and dinput8.dll from its bin folder into the GTA V folder.",
+    "The app adds MCPassthrough.asi, ReShade 6.8.0 (as ReShade64.asi, with ReShade.ini and the MCPassthrough effect) and args.txt (-nobattleye -noBE) to the GTA V folder; Restore removes them and puts back any file they replaced.",
+    "Press Play: Minecraft starts first (the app's Prism instance \"sigf-um-gta5-passthrough\", Minecraft 26.3, Fabric Loader 0.19.5, Fabric API 0.161.0+26.3, Java 25); leave its window open. Then GTA V starts with BattlEye off: pick Story Mode on the landing page yourself.",
+    "Story mode only, never GTA Online: BattlEye stays off while the files are installed. Back up your saves first.",
+    "GTA settings that work: windowed 1920x1080, \"Pause game on focus loss\" off, depth of field off. F7 toggles the passthrough, F8 re-levels the Minecraft ground. Third person can stutter; first person plays best (issue #60).",
+    "The link listens on 127.0.0.1:25599 with no authentication while Minecraft runs (upstream design).",
+    "SIGF build of universal-modder 0f5dcdf (no upstream release). Beta: report bugs to the author on the upstream issue tracker."
+  ]
+}
