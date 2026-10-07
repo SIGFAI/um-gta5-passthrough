@@ -65,6 +65,15 @@
       "note": "in the Minecraft pack (downloaded from Modrinth)"
     }
   ],
+  "requires_files": [
+    {
+      "id": "scripthookv",
+      "game": "gta5",
+      "path": "{game}/ScriptHookV.dll",
+      "message": "Install Script Hook V for your GTA V build first",
+      "page": "https://www.dev-c.com/gtav/scripthookv/"
+    }
+  ],
   "install": [
     {
       "game": "gta5",
